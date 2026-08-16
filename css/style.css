@@ -93,11 +93,19 @@ main{
 .tile:hover .cap .t{color:var(--accent)}
 .tile .cap .y{display:block;font-size:11px;color:var(--soft)}
 
+/* serendipitous browsing (embedded Miro board) */
+.miro-embed{
+  margin-top:4px;width:100%;height:calc(100vh - 160px);min-height:420px;
+  border:1px solid var(--line);border-radius:4px;overflow:hidden;
+}
+.miro-embed iframe{width:100%;height:100%;display:block;border:0}
+
 /* timeline rows (teaching / client work) */
 .tline{display:grid;grid-template-columns:90px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid var(--line)}
 .tline:first-child{border-top:1px solid var(--line)}
 .tline .y{font-family:"JetBrains Mono",monospace;color:var(--soft);font-size:12.5px}
 .tline .t{font-weight:500;font-size:15px}
+.tline .t a:hover{color:var(--accent-main)}
 .tline .d{color:var(--soft);font-size:13.5px;margin-top:4px}
 
 /* about */

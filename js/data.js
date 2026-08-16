@@ -62,17 +62,7 @@ window.SITE = {
     }
   ],
 
-  teaching: [
-    { year: "2026", title: "Course Title One", org: "Institution Name", desc: "One line describing the course or workshop." },
-    { year: "2025", title: "Course Title Two", org: "Institution Name", desc: "One line describing the course or workshop." },
-    { year: "2024", title: "Course Title Three", org: "Institution Name", desc: "One line describing the course or workshop." }
-  ],
-
-  clientWork: [
-    { year: "2026", title: "Client Project One", org: "Client Name", desc: "One line describing the engagement." },
-    { year: "2025", title: "Client Project Two", org: "Client Name", desc: "One line describing the engagement." },
-    { year: "2024", title: "Client Project Three", org: "Client Name", desc: "One line describing the engagement." }
-  ],
+  browsingEmbedUrl: "https://miro.com/app/live-embed/uXjVLS4VxrE=/?share_link_id=165655138847",
 
   about: {
     bio: [

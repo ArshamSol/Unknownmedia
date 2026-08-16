@@ -10,8 +10,7 @@
 
   const VIEWS = [
     { id: "home", label: "Portfolio" },
-    { id: "teaching", label: "Teaching" },
-    { id: "client", label: "Client Work" },
+    { id: "browsing", label: "Serendipitous Browsing" },
     { id: "about", label: "About" },
     { id: "contact", label: "Contact" }
   ];
@@ -88,30 +87,17 @@
     });
   }
 
-  function renderTeaching() {
-    document.body.classList.add("infopage");
-    document.body.classList.remove("fullproj");
-    let html = '<div class="view-title">Teaching</div>';
-    S.teaching.forEach(t => {
-      html +=
-        '<div class="tline"><div class="y mono">' + t.year + '</div>' +
-        '<div><div class="t">' + t.title + '</div>' +
-        '<div class="d">' + t.org + ' — ' + t.desc + '</div></div></div>';
-    });
-    $main.innerHTML = html;
-  }
-
-  function renderClient() {
-    document.body.classList.add("infopage");
-    document.body.classList.remove("fullproj");
-    let html = '<div class="view-title">Client Work</div>';
-    S.clientWork.forEach(c => {
-      html +=
-        '<div class="tline"><div class="y mono">' + c.year + '</div>' +
-        '<div><div class="t">' + c.title + '</div>' +
-        '<div class="d">' + c.org + ' — ' + c.desc + '</div></div></div>';
-    });
-    $main.innerHTML = html;
+  function renderBrowsing() {
+    document.body.classList.add("fullproj");
+    document.body.classList.remove("infopage");
+    $main.innerHTML =
+      '<div class="closebar" id="closebar"><span>Close</span></div>' +
+      '<div class="view-title">Serendipitous Browsing</div>' +
+      '<div class="miro-embed"><iframe src="' + S.browsingEmbedUrl + '" ' +
+      'frameborder="0" scrolling="no" allowfullscreen ' +
+      'allow="fullscreen; clipboard-read; clipboard-write" ' +
+      'referrerpolicy="no-referrer-when-downgrade"></iframe></div>';
+    document.getElementById("closebar").onclick = () => go("home");
   }
 
   function renderAbout() {
@@ -187,8 +173,7 @@
   function render() {
     buildRailNav();
     if (current === "work") renderWork(currentId);
-    else if (current === "teaching") renderTeaching();
-    else if (current === "client") renderClient();
+    else if (current === "browsing") renderBrowsing();
     else if (current === "about") renderAbout();
     else if (current === "contact") renderContact();
     else renderHome();
